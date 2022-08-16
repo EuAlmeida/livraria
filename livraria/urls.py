@@ -6,10 +6,10 @@ from core.serializers import AutorSerializer
 from core.views import AutorViewSet, CategoriaViewset, EditoraViewSet, LivroViewSet
 
 router = DefaultRouter()
+router.register(r'autores', AutorViewSet)
 router.register(r'categorias', CategoriaViewset)
-router.register(r'editora', EditoraViewSet)
-router.register(r'autor', AutorViewSet)
-router.register(r'Livro', LivroViewSet)
+router.register(r'editoras', EditoraViewSet)
+router.register(r'livros', LivroViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
