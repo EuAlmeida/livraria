@@ -4,6 +4,7 @@ from .autor import Autor
 from .categoria import Categoria
 from .editora import Editora
 
+
 class Livro(models.Model):
     titulo = models.CharField(max_length=150, null=False, blank=False)
     isbn = models.CharField(max_length=32, null= True, blank=True)

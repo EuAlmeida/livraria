@@ -1,9 +1,9 @@
 from django.contrib import admin
-
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from core.models import Categoria, Livro, Autor, Editora, Usuario
+from core.models import Autor, Categoria, Editora, Livro, Usuario
+
 admin.site.register(Livro)
 admin.site.register(Categoria)
 admin.site.register(Autor)
