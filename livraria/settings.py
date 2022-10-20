@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'core',
+    "rest_framework_simplejwt",
     'corsheaders',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,18 @@ USE_TZ = True
 # Usuario
 
 AUTH_USER_MODEL = "core.Usuario"
+
+
+# Rest_Framework_Autenticação
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissions",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    )
+}
 
 
 # Static files (CSS, JavaScript, Images)
