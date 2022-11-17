@@ -11,14 +11,14 @@ class Livro(models.Model):
     titulo = models.CharField(max_length=150, null=False, blank=False)
     isbn = models.CharField(max_length=32, null= True, blank=True)
     quantidade = models.IntegerField(null=True)
-    preço = models.DecimalField(decimal_places=2, max_digits=3, null= True)
+    preco = models.DecimalField(decimal_places=2, max_digits=7, null= True)
     categoria = models.ForeignKey(
         Categoria, on_delete=models.PROTECT, related_name="livros"
     )
     editora = models.ForeignKey(
         Editora, on_delete=models.PROTECT, related_name="livros"
     )
-    autor = models.ManyToManyField(Autor, related_name="Livro")
+    autores = models.ManyToManyField(Autor, related_name="Livro")
     capa = models.ForeignKey(
         Image,
         related_name="+",
