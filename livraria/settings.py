@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
      "drf_spectacular",
     'corsheaders',
+    "uploader",
     'core',
 ]
 
@@ -154,3 +155,8 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API para gerenciamento de livraria, incluindo endpoints e documentação.",
     "VERSION": "1.0.0",
 }
+
+MEDIA_URL = "http://localhost:8000/media/"
+MEDIA_ENDPOINT = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+FILE_UPLOAD_PERMISSIONS = 0o640
